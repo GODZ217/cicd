@@ -2,7 +2,7 @@ node {
    // Mark the code checkout 'stage'....
    stage 'Checkout'
    
-   sh "git clone https://github.com/GODZ217/cicd.git source"
+   sh "git clone https://github.com/GODZ217/cicd.git"
 
    // Get the maven tool.
    // ** NOTE: This 'M3' maven tool must be configured
@@ -20,6 +20,7 @@ node {
    stage 'push'
 
             sh "mkdir -p build-folder/target/ build-folder/app/ "
+            sh "cd cicd"
             sh "cp ocp.Dockerfile build-folder/Dockerfile"
             
 
